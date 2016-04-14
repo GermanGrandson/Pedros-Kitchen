@@ -1,6 +1,8 @@
 class Recipe < ActiveRecord::Base
   has_many :ingredients
   has_many :directions
+  belongs_to :user
+
   validates :title, :description, :image, presence: true
 
   accepts_nested_attributes_for :ingredients,
